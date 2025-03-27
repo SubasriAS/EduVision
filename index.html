@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVision</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">EduVision</div>
+            <div class="nav-links">
+                <a href="#"><i class="fas fa-bell"></i></a>
+                <a href="#"><i class="fas fa-user-circle"></i> Admin</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="dashboard">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-user-check"></i> Attendance</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Grading</a></li>
+                    <li><a href="#"><i class="fas fa-comment-alt"></i> Feedback</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Results</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Students</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+            
+            <div class="main-content">
+                <h2 class="section-title">Attendance System</h2>
+                
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/2.1.4/tesseract.min.js"></script>
+            </head>
+            <body>
+                <div class="container">
+                    <h2>Upload Attendance Image</h2>
+                    <input type="file" id="imageUpload" accept="image/*">
+                    <div id="imagePreview"></div>
+                    <p id="loadingMessage"></p>
+            
+                    <h2>Attendance Table</h2>
+                    <table id="attendanceTable">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>3/25/2025</th>
+                                <th>3/26/2026</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be inserted here -->
+                        </tbody>
+                    </table>
+            
+                    <h3>Statistics</h3>
+                    <p>Present: <span id="presentCount">0%</span></p>
+                    <p>Absent: <span id="absentCount">0%</span></p>
+            
+                    <button id="saveData">Save Data</button>
+                    <button id="exportCSV">Export CSV</button>
+                </div>
+                
+               
+                    
+                    <div id="resultsView" class="results-container hidden">
+                        <h3>Attendance Results</h3>
+                        <p><strong>Date:</strong> <span id="current-date"></span></p>
+                        <div id="attendance-results"></div>
+                        <table>
+                            <thead>
+                                <tr><th>Roll No</th><th>Status</th><th>Timestamp</th></tr>
+                            </thead>
+                            <tbody id="attendance-table"></tbody>
+                        </table>
+                        <p><strong>Present Count:</strong> <span id="present-count">0</span></p>
+                        <p><strong>Absent Count:</strong> <span id="absent-count">0</span></p>
+                    </div>
+                </div>
+                
+                <h2 class="section-title">Student Performance</h2>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <h3 class="card-title">Test Scores</h3>
+                        <canvas id="gradesChart" height="200"></canvas>
+                    </div>
+                    
+                    <div class="container">
+                        <h2>Student Feedback</h2>
+                        <form id="feedbackForm">
+                            <label for="studentName">Your Name:</label>
+                            <input type="text" id="studentName" required>
+                            
+                            <label for="feedbackText">Your Feedback:</label>
+                            <textarea id="feedbackText" rows="4" required></textarea>
+                            
+                            <button type="submit">Submit Feedback</button>
+                        </form>
+                
+                        <div class="response">
+                            <h3>Teacher's Response:</h3>
+                            <p id="teacherResponse">Waiting for response...</p>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/2.1.4/tesseract.min.js"></script>
+    <script src="mainpage.js"></script>
+</body>
+</html>
